@@ -1,0 +1,10 @@
+/* Common page-level ad placements. */
+ytd-display-ad-renderer,
+ytd-promoted-sparkles-web-renderer,
+ytd-promoted-video-renderer,
+ytd-ad-slot-renderer,
+#masthead-ad,
+#player-ads,
+ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-ads"] {
+  display: none !important;
+}

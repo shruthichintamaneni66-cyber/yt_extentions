@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "initiatorDomains": ["youtube.com"],
+      "requestDomains": ["doubleclick.net", "googleadservices.com", "googlesyndication.com"],
+      "resourceTypes": ["main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "media", "websocket", "other"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||youtube.com/pagead/",
+      "initiatorDomains": ["youtube.com"],
+      "resourceTypes": ["sub_frame", "script", "image", "xmlhttprequest", "media", "other"]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||youtube.com/api/stats/ads",
+      "initiatorDomains": ["youtube.com"],
+      "resourceTypes": ["xmlhttprequest", "other"]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "*_ad_*",
+      "initiatorDomains": ["youtube.com"],
+      "domainType": "thirdParty",
+      "resourceTypes": ["media"]
+    }
+  },
+  {
+    "id": 5,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||googlevideo.com/initplayback?source=youtube&*oad=",
+      "initiatorDomains": ["youtube.com"],
+      "resourceTypes": ["xmlhttprequest"]
+    }
+  }
+]

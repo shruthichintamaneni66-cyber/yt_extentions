@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Ad Blocker",
+  "version": "1.1.0",
+  "description": "Blocks requests to several common YouTube ad endpoints.",
+  "permissions": ["declarativeNetRequest"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://youtube.com/*",
+    "https://*.googlevideo.com/*",
+    "https://*.doubleclick.net/*",
+    "https://*.googleadservices.com/*",
+    "https://*.googlesyndication.com/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "youtube_ad_blocks",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://youtube.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://youtube.com/*"
+      ],
+      "css": ["styles.css"],
+      "run_at": "document_start"
+    }
+  ]
+}
